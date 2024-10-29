@@ -3,11 +3,14 @@ import style from "./SearchBox.module.css";
 import {
   changeFilter,
   selectNameFilter,
-} from "../../redux/filtersSlice/filtersSlice";
+} from "../../redux/filtersSlice/filtersSlice.js";
 
 const Searchbox = () => {
   const dispatch = useDispatch();
   const filter = useSelector(selectNameFilter);
+  const handleChange = (e) => {
+    dispatch(changeFilter(e.target.value));
+  };
   return (
     <div className={style.container}>
       <h2 className={style.title}>Find contacts by name</h2>
@@ -15,7 +18,7 @@ const Searchbox = () => {
         className={style.input}
         type="text"
         value={filter}
-        onChange={(e) => dispatch(changeFilter(e.target.value))}
+        onChange={handleChange}
         placeholder="Enter name...."
       />
     </div>
