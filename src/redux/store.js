@@ -3,8 +3,8 @@ import storage from 'redux-persist/lib/storage';
 import { configureStore } from "@reduxjs/toolkit";
 
 
-import contactsReducer from "../contactsSlice/contactsSlice.js"
-import filtersReducer from "../filtersSlice/filtersSlice.js"
+import contactsReducer from "./contactsSlice/contactsSlice.js"
+import filtersReducer from "./filtersSlice/filtersSlice.js"
 
 
 
